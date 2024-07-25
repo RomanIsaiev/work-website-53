@@ -11,17 +11,44 @@ function getTimeRemaining(endtime) {
   };
 }
 
+function declensionNum(number, words) {
+  if (number > 10 && number < 20) return words[2];
+  var n = number % 10;
+  if (n === 1) return words[0];
+  if (n > 1 && n < 5) return words[1];
+  return words[2];
+}
+
 function initializeClock(id, endtime) {
   var clock = document.getElementById(id);
   var hoursSpan = clock.querySelector('.hours');
   var minutesSpan = clock.querySelector('.minutes');
   var secondsSpan = clock.querySelector('.seconds');
+  var hoursLabel = clock.querySelector('.hours-label');
+  var minutesLabel = clock.querySelector('.minutes-label');
+  var secondsLabel = clock.querySelector('.seconds-label');
 
   function updateClock() {
     var t = getTimeRemaining(endtime);
     hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
     minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
     secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+    hoursLabel.innerHTML = declensionNum(t.hours, [
+      'година',
+      'години',
+      'годин',
+    ]);
+    minutesLabel.innerHTML = declensionNum(t.minutes, [
+      'хвилина',
+      'хвилини',
+      'хвилин',
+    ]);
+    secondsLabel.innerHTML = declensionNum(t.seconds, [
+      'секунда',
+      'секунди',
+      'секунд',
+    ]);
 
     if (t.total <= 0) {
       clearInterval(timeinterval);
