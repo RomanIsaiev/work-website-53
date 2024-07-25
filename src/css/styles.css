@@ -83,6 +83,18 @@ img {
   padding: 60px 0;
 }
 
+@keyframes pulseScale {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.08;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
 /* header */
 
 .header {
@@ -203,6 +215,8 @@ img {
 
   max-width: 345px;
   margin: 0 auto;
+
+  animation: pulseScale 2000ms infinite;
 }
 
 .header-button {
@@ -340,9 +354,6 @@ img {
 }
 
 /* for-you */
-
-.for-you {
-}
 
 .foryou-title-container {
   margin-bottom: 20px;
@@ -1123,6 +1134,7 @@ img {
 .insta-link {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
 }
 
