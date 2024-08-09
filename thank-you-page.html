@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THANK YOU!</title>
+    <link rel="stylesheet" href="./src/css/styles.css" />
+    <link rel="stylesheet" href="./src/css/thanks.css" />
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        'script',
+        'https://connect.facebook.net/en_US/fbevents.js'
+      );
+      fbq('init', '1575268420056628');
+      fbq('track', 'PageView');
+      fbq('track', 'Lead');
+    </script>
+  </head>
+  <body>
+    <section class="thanks-section section">
+      <div class="container">
+        <h1 class="thanks-title">Якщо ви бачите</h1>
+        <p class="thanks-text subtitle">
+          цю сторінку - оплата за курс пройшла успішно!
+        </p>
+        <p class="thanks-text desc">
+          Швидше перевіряйте доступ на пошті. І не забудьте перевірити папки
+          «Спам» та «Промоакції»
+        </p>
+        <a class="thanks-home link" href="/index.html"
+          >повернутись на головну</a
+        >
+      </div>
+    </section>
+  </body>
+</html>
